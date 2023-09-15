@@ -16,12 +16,12 @@ jobs:
     - name: Log in to Docker Hub
       uses: docker/login-action@f054a8b539a109f9f41c372932f1ae047eff08c9
       with: 
-          username: ${{secrets.Dusername}}
-          password: ${{secrets.Dpassword}}
+          username: sanjana257
+          password: catisgay.25
 
                               
     - name: Build Docker image
-      run: docker build -t ${{secrets.Dusername}}/weeeeb-php-env .
+      run: docker build -t sanjana257/weeeeb-php-env .
 
     - name: Run Docker Compose
       run: docker-compose up --build -d
@@ -30,7 +30,7 @@ jobs:
       run: sleep 10  # Adjust the wait time as needed
       
     - name: Push Docker Image
-      run: docker push ${{secrets.Dusername}}/weeeeb-php-env:latest
+      run: docker push sanjana257/weeeeb-php-env:latest
 
     - name: Stop Docker Compose
       run: docker-compose down
