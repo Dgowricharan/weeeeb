@@ -1,5 +1,10 @@
 <?php
-include 'login.php'
+// Enable error reporting and display errors on the page for debugging
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+include 'login.php'; // Include your login.php file
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fullname = $_POST['fullname'];
     $email = $_POST['email'];
@@ -18,10 +23,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($stmt->execute()) {
         // Redirect to the specified link
         header("Location: http://localhost/new%20hello%20mobiles/homepage.html");
-        echo "Data inserted successfully"
+        echo "Data inserted successfully";
         exit();
     } else {
-        echo "Error: ". $stmt->error;
+        echo "Error: " . $stmt->error;
     }
 
     $stmt->close();
